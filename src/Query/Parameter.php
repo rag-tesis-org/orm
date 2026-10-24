@@ -50,6 +50,14 @@ class Parameter
     }
 
     /**
+     * Whether this parameter is positional (its name is numeric) rather than named.
+     */
+    public function isPositional(): bool
+    {
+        return ctype_digit($this->name);
+    }
+
+    /**
      * Retrieves the Parameter name.
      */
     public function getName(): string
